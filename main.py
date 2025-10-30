@@ -1,5 +1,4 @@
 from PIL import Image
-import io
 
 # Load your Little Mac stock icon image
 img = Image.open("Mac.png").convert("RGBA")
@@ -11,8 +10,8 @@ page_width, page_height = int(8.5 * dpi), int(11 * dpi)
 # Create a transparent canvas for the page
 canvas = Image.new("RGBA", (page_width, page_height), (255, 255, 255, 0))
 
-# Scale the icon proportionally to about half the page width
-target_width = page_width // 2
+# Scale the icon to fill about 80% of the page width
+target_width = int(page_width * 0.8)
 scale_factor = target_width / img.width
 target_height = int(img.height * scale_factor)
 
@@ -25,6 +24,6 @@ resized_img = img.resize((target_width, target_height), Image.LANCZOS)
 canvas.paste(resized_img, (x, y), resized_img)
 
 # Save as PDF (transparent)
-canvas.save("LittleMac_centered.pdf", format="PDF", resolution=dpi)
+canvas.save("LittleMac_large_centered.pdf", format="PDF", resolution=dpi)
 
-print("✅ PDF created: LittleMac_centered.pdf")
+print("✅ PDF created: LittleMac_large_centered.pdf")
