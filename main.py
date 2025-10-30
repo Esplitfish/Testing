@@ -2,7 +2,7 @@ from PIL import Image
 import io
 
 # Load your Little Mac stock icon image
-img = Image.open("611ac089-6231-4717-a62d-2a8cb4913232.png").convert("RGBA")
+img = Image.open("Mac.png").convert("RGBA")
 
 # Create a letter-size page (8.5 x 11 inches at 300 DPI)
 dpi = 300
