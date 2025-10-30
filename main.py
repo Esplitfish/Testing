@@ -11,7 +11,7 @@ page_width, page_height = int(8.5 * dpi), int(11 * dpi)
 canvas = Image.new("RGBA", (page_width, page_height), (255, 255, 255, 0))
 
 # Scale the icon to fill about 80% of the page width
-target_width = int(page_width * 0.8)
+target_width = int(page_width * 0.9)
 scale_factor = target_width / img.width
 target_height = int(img.height * scale_factor)
 
